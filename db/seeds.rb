@@ -11,6 +11,9 @@ require 'faker'
 print "clear User:"
 User.destroy_all
 puts " ✔"
+print "clear Event:"
+Event.destroy_all
+puts " ✔"
 
 10.times do
   user = User.create!(
@@ -18,5 +21,17 @@ puts " ✔"
                       last_name: Faker::Name.last_name,
                       email: Faker::Name.first_name + "@yopmail.com",
                       description: Faker::Quote.famous_last_words
+                      )
+end
+
+10.times do
+  user = Event.create!(
+                      start_date: Faker::Date.between(1.days.from_now, 15.days.from_now),
+                      duration: 60,
+                      title: Faker::Lorem.sentence(2),
+                      description: Faker::Lorem.sentence(15),
+                      price: 100,
+                      location: "Grenoble",
+                      administrator: User.all.sample
                       )
 end
