@@ -4,7 +4,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
   :user_name => ENV['SENDGRID_LOGIN'],
   :password => ENV['SENDGRID_PWD'],
-  :domain => 'monsite.fr',
+  :domain => 'event-brite-grenoble.fr',
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,
