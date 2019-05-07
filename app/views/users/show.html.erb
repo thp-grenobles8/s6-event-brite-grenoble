@@ -5,9 +5,33 @@
     </div>
 </div>
 
-<p>Nom de famille : <%= @user.last_name %></p>
-<p>Description : <%= @user.description %></p>
-<p><i class="fas fa-at"></i> <%= @user.email %></p>
+
+<div class="card-group">
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="far fa-address-card"></i></i></h5>
+    <p class="card-text"> <%= @user.description %></p>
+  </div>
+</div>
+
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-file-signature"></i></h5>
+    <p class="card-text"> <%= @user.last_name %></p>
+  </div>
+</div>
+
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-at"></i></h5>
+    <p class="card-text"><%= @user.email %></p>
+  </div>
+</div>
+</div>
+
+<div class='mx-auto' style="width: 400px;height: 80px;">
+<h2>Liste des Events :</h2>
+</div>
 
 <div class='card-columns'>
 	<% @events.each do |event| %>
