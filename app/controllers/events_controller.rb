@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user, only: [:create, :new]
   def index
     @events = Event.all
   end
@@ -16,6 +17,17 @@ class EventsController < ApplicationController
     else
       flash[:danger] = "Ton event n'est pas valide !"
       render :new
+    end
+  end
+
+
+
+  private
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Tu dois te connecter pour créer un Event"
+      redirect_to :root
     end
   end
 

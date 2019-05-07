@@ -19,11 +19,13 @@
   </p>
 </div>
 
-<h2>Events :</h2>
+<div class='mx-auto' style="width: 400px;height: 80px;">
+<h2>Liste des Events :</h2>
+</div>
 
 <div class='card-columns'>
 	<% @events.each do |event| %>
-		<div class="card bg-secondary" style="width: 18rem;">
+		<div class="card bg-secondary" style="width: 22rem;">
 		  <!-- <img src="..." class="card-img-top" alt="..."> -->
 		  <div class="card-body">
 		    <h5 class="card-title"><a class="text-warning"><%= link_to event.title.upcase , event_path(event.id)%></a></h5>
