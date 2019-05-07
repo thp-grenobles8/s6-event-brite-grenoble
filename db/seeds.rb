@@ -20,7 +20,8 @@ puts " ✔"
                       first_name: Faker::Name.first_name, 
                       last_name: Faker::Name.last_name,
                       email: Faker::Name.first_name + "@yopmail.com",
-                      description: Faker::Quote.famous_last_words
+                      description: Faker::Quote.famous_last_words,
+                      password: "password"
                       )
 end
 
